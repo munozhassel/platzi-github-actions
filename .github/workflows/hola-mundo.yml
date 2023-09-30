@@ -1,0 +1,11 @@
+name: hola-mundo  # Nombre descriptivo de tu workflow
+
+on: [push]
+
+jobs:
+  hola-mundo-python:
+    runs-on: ubuntu-latest  # Sistema operativo en el que se ejecutará el trabajo (puedes cambiarlo según tus necesidades)
+
+    steps:
+    - name: Ejecutar comandos  # Nombre de este paso
+      run: python -c "print('Hola, mundo')"
