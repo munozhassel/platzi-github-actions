@@ -1,11 +1,11 @@
-name: hola-mundo  # Nombre descriptivo de tu workflow
-
-on: [push]
-
+name: hola-mundo #Nombre del workflow
+on: [push] #evento que lo activará
 jobs:
-  hola-mundo-python:
-    runs-on: ubuntu-latest  # Sistema operativo en el que se ejecutará el trabajo (puedes cambiarlo según tus necesidades)
+  hola-mundo: #Nombre del job
+    runs-on: ubuntu-latest #Imagen en la que correrá
+    steps: #Lista de steps del job hola-mundo
+      - name: CheckoutV3  #Nombre del 1er step
+        uses: actions/checkout@v3 # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
 
-    steps:
-    - name: Ejecutar comandos  # Nombre de este paso
-      run: python -c "print('Hola, mundo')"
+      - name: Correr Script #Nombre del 2er step
+        run: python hola-mundo.py #Comando que se va ejecutar
