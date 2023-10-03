@@ -227,7 +227,7 @@ Ahora que conoces los componentes básicos de un workflow en GitHub Actions pode
   TBD-step-3-notes.
 -->
 
-<details id=3 open>
+<details id=3>
 <summary><h2>Paso 3: Aprende a usar Expresiones</h2></summary>
 
 _¡Buen trabajo usando los distintos eventos para lanzar nuevos workflows! :sparkles:_
@@ -290,7 +290,7 @@ Puedes combinar valores literales, referencias de contexto y funciones usando op
   TBD-step-4-notes.
 -->
 
-<details id=4>
+<details id=4 open>
 <summary><h2>Paso 4: Aprende a usar los distintos Contextos</h2></summary>
 
 _¡Excelente trabajo con el uso de Expresiones! :partying_face:_
@@ -431,3 +431,5 @@ Has aprendido sobre:
 ---
 
 &copy; 2023 Platzi &bull; [Código de Conducta](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) &bull; [CC-BY-4.0 License](https://creativecommons.org/licenses/by/4.0/legalcode)
+
+Aqui aprendiendo cosas nuevas!
