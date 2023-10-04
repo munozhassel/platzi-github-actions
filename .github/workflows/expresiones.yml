@@ -36,10 +36,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Verificar Input
-      id: input_validation
+    - name: Verificar dni
       run: |
-        input_value="${{ inputs.dni }}"
+        input_value="${{ github.event.inputs.dni }}"
         if [[ ${#input_value} -ge 7 ]]; then
           echo "El input '${input_value}' tiene al menos 7 dígitos."
           echo "::set-output name=input_valid::true"
@@ -48,7 +47,7 @@ jobs:
           echo "::set-output name=input_valid::false"
         fi
 
-    - name: Utilizar el resultado de la verificación
+    - name: Respuesta dni validado
       run: |
         if [[ "${{ steps.input_validation.outputs.input_valid }}" == 'true' ]]; then
           echo "Realizar acciones adicionales aquí porque el input tiene al menos 7 dígitos."
