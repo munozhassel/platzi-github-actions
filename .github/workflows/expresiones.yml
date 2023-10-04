@@ -9,18 +9,20 @@ on:
       nombre:
         description: 'Nombre'
         required: true
-	default: 'Juan'
+        default: 'Juan' # Establece un valor predeterminado
         type: string
 jobs:
   mayor:
-  if: ${{ inputs.edad >= 18 }}
-  runs-on: ubuntu-latest
-  steps:
-    - name : Correr script
-      run: echo ${{ inputs.nombre }} es mayor de edad
+    runs-on: ubuntu-latest
+    if: ${{ github.event.inputs.edad >= 18 }}
+    steps:
+      - name: Correr script
+        run: echo ${{ github.event.inputs.nombre }} es mayor de edad
+
   menor:
-  if: ${{ inputs.edad < 18 }}
-  runs-on: ubuntu-latest
-  steps:
-    - name : Correr script
-      run: echo ${{ inputs.nombre }} es menor de edad
+    runs-on: ubuntu-latest
+    if: ${{ github.event.inputs.edad < 18 }}
+    steps:
+      - name: Correr script
+        run: echo ${{ github.event.inputs.nombre }} es menor de edad
+
