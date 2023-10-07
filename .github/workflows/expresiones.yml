@@ -13,16 +13,16 @@ on:
         type: string
 jobs:
   mayor:
+    if: ${{ inputs.edad >= 18 }}}
     runs-on: ubuntu-latest
-    if: ${{ github.event.inputs.edad >= 18 }}
     steps:
       - name: Correr script
-        run: echo ${{ github.event.inputs.nombre }} es mayor de edad
+        run: echo ${{ inputs.nombre }} es mayor de edad
 
   menor:
+    if: ${{ inputs.edad < 18 }}
     runs-on: ubuntu-latest
-    if: ${{ github.event.inputs.edad < 18 }}
     steps:
       - name: Correr script
-        run: echo ${{ github.event.inputs.nombre }} es menor de edad
+        run: echo ${{ inputs.nombre }} es menor de edad
 
