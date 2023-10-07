@@ -1,0 +1,40 @@
+# This is a basic workflow to help you get started with Actions
+
+name: learning_triggers
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "aprendiendo-github-actions" ]
+  pull_request:
+    branches: [ "aprendiendo-github-actions" ]
+  schedule:
+    - cron:  '0 20 21 * *'
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+        type: choice
+        options:
+        - info
+        - warning
+        - debug  
+  issue_comment:
+    issue_comment:
+    types: [created, deleted]
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+      - name: Correr Script #Nombre del 2er step
+        run: python hola-mundo.py #Comando que se va ejecutar
