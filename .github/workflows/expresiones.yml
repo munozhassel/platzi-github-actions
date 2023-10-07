@@ -1,7 +1,4 @@
-# This is a basic workflow to help you get started with Actions
-
-name: Expresiones
-run-name: ¡Estoy aprendiendo a usar Expresiones!
+name: expression
 on:
   workflow_dispatch:
     inputs:
@@ -10,20 +7,22 @@ on:
         required: true
         type: integer
       nombre:
-        description: 'Tu nombre'
+        description: 'Nombre'
         required: true
-        default: 'Juan'
+        default: 'Juan' # Establece un valor predeterminado
         type: string
 jobs:
   mayor:
-    if: ${{ inputs.edad >= 18 }} 
+    if: ${{ inputs.edad >= 18 }}
     runs-on: ubuntu-latest
     steps:
       - name: Correr script
         run: echo ${{ inputs.nombre }} es mayor de edad
+
   menor:
-    if: ${{ inputs.edad < 18 }} 
+    if: ${{ inputs.edad < 18 }}
     runs-on: ubuntu-latest
     steps:
       - name: Correr script
         run: echo ${{ inputs.nombre }} es menor de edad
+
